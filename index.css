@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0f;
+  --color-bg-elevated: #11111a;
+  --color-border: #1e1e2e;
+  --color-text: #e4e4e7;
+  --color-text-muted: #71717a;
+  --color-accent-purple: #a855f7;
+  --color-accent-cyan: #06b6d4;
+  --color-gradient-start: #a855f7;
+  --color-gradient-end: #06b6d4;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-slide-up: slideUp 0.6s ease-out;
+  --animate-slide-down: slideDown 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+::selection {
+  background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+  color: white;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding: 0 4rem;
+  }
+}
